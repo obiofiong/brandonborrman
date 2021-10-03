@@ -13,8 +13,6 @@ const HeroSection = styled.div`
 		height: 250px;
 		z-index: 5;
 	}
-	div {
-	}
 	p {
 		font-size: 10px;
 		margin-bottom: 10px;
@@ -28,7 +26,7 @@ const HeroSection = styled.div`
 		border-radius: 15px;
 		left: -10px;
 		opacity: 0.46;
-		animation: 3s infinite alternate slideBackandForth;
+		animation: 1s infinite alternate slideBackandForth;
 		/* top: 45%; */
 		/* transform: translateY(-50%); */
 	}
@@ -46,6 +44,11 @@ const HeroSection = styled.div`
 		}
 		to {
 			width: 90px;
+		}
+	}
+	@media only screen and (max-width: 480px) {
+		.name {
+			font-size: 28px;
 		}
 	}
 `;

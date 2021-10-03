@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Building } from "@styled-icons/bootstrap/Building";
-import Twitter from "../../assets/img/twitter.jpg";
+// import Twitter from "../../assets/img/twitter.jpg";
 
 const Card = styled.div`
 	position: relative;
@@ -52,6 +52,9 @@ const Card = styled.div`
 		font-weight: 100;
 		font-size: 12px;
 		text-align: center;
+	}
+	@media only screen and (max-width: 780px) {
+		min-width: 240px;
 	}
 `;
 const BuildingIcon = styled(Building)`

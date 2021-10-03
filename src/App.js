@@ -3,6 +3,7 @@ import Hero from "./components/Hero/Hero";
 import About from "./components/About/About";
 import Experience from "./components/Experience/Experience";
 import Skills from "./components/Skills/Skills.jsx";
+import Socials from "./components/Socials/Socials";
 // import Skills from "./components/Skills/Skills";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
 			<About />
 			<Experience />
 			<Skills />
+			<Socials />
 		</div>
 	);
 }
