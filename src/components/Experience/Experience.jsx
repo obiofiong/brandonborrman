@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 import ExperienceCard from "./ExperienceCard";
 import Twitter from "../../assets/img/twitter.jpg";
@@ -6,27 +7,51 @@ import Quantcast from "../../assets/img/quantcast.png";
 // import Twitter from "../../assets/img/twitter.jpg";
 
 const ExperienceContainer = styled.section`
+	position: relative;
 	/* height: 1000px; */
-	display: flex;
-	align-items: center;
 	margin-top: 80px;
 	background: #000000;
 	padding: 60px 30px;
 	z-index: 5;
 	/* gap: 20px; */
-	overflow-x: scroll;
-
-	&::-webkit-scrollbar {
-		width: 0.5em;
+	.next {
+		background: white;
+		color: black;
+		position: absolute;
+		height: 40px;
+		width: 40px;
+		z-index: 7;
+		top: 50%;
+		right: 10px;
 	}
 
-	&::-webkit-scrollbar-track {
-		box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	.previous {
+		background: white;
+		color: black;
+		position: absolute;
+		height: 40px;
+		width: 40px;
+		z-index: 7;
+		top: 50%;
 	}
+	.scrollable {
+		position: relative;
+		display: flex;
+		align-items: center;
 
-	&::-webkit-scrollbar-thumb {
-		background-color: darkgrey;
-		outline: 1px solid slategrey;
+		overflow-x: scroll;
+		&::-webkit-scrollbar {
+			width: 0.5em;
+		}
+
+		&::-webkit-scrollbar-track {
+			box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background-color: darkgrey;
+			outline: 1px solid slategrey;
+		}
 	}
 `;
 const Experience = () => {
@@ -80,16 +105,21 @@ const Experience = () => {
 			logo: Twitter,
 		},
 	];
+	// const [slideIndex, setSlideIndex] = React.useState(0);
 	return (
 		<ExperienceContainer>
-			{experiences.map((experience) => {
-				return (
-					<ExperienceCard
-						key={experience.id}
-						experience={experience}
-					/>
-				);
-			})}
+			{/* <span className="next">Next</span> */}
+			{/* <span className="previous">Previous</span> */}
+			<div className="scrollable">
+				{experiences.map((experience) => {
+					return (
+						<ExperienceCard
+							key={experience.id}
+							experience={experience}
+						/>
+					);
+				})}
+			</div>
 			{/* <ExperienceCard />
 			<ExperienceCard />
 			<ExperienceCard />

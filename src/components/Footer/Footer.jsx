@@ -3,13 +3,15 @@ import styled from "styled-components";
 const FooterContainer = styled.section`
 	height: 120px;
 	text-align: center;
+	padding: 20px;
+	font-size: 14px;
 `;
 const Footer = () => {
 	return (
-		<div>
+		<FooterContainer>
 			<p>Copyright 2021</p>
 			<p>Developed by John Obiofiong</p>
-		</div>
+		</FooterContainer>
 	);
 };
 

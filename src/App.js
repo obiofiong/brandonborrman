@@ -5,7 +5,6 @@ import Experience from "./components/Experience/Experience";
 import Skills from "./components/Skills/Skills.jsx";
 import Socials from "./components/Socials/Socials";
 import Footer from "./components/Footer/Footer";
-// import Skills from "./components/Skills/Skills";
 
 function App() {
 	return (
