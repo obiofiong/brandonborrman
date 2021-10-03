@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 import Mountain from "../../assets/img/mountain.jpg";
 import Mountain1 from "../../assets/img/mountain1.png";
@@ -93,6 +94,14 @@ const AboutSection = styled.section`
 	}
 `;
 const About = () => {
+	const [offsetY, setOffsetY] = React.useState();
+	const handleScroll = () => {
+		setOffsetY(window.pageYOffset);
+	};
+	React.useEffect(() => {
+		window.addEventListener("scroll", handleScroll);
+		return () => window.addEventListener("scroll", handleScroll);
+	}, []);
 	return (
 		<AboutSection>
 			<div className="about-start">
@@ -120,7 +129,11 @@ const About = () => {
 				</p>
 			</div>
 			{/* <div className="bg-img"> */}
-			<img src={Mountain} alt="background mountain" />
+			<img
+				src={Mountain}
+				alt="background mountain"
+				style={{ transform: `translateY(-${offsetY + 0.9}px)` }}
+			/>
 			{/* </div> */}
 		</AboutSection>
 	);

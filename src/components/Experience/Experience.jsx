@@ -52,6 +52,14 @@ const ExperienceContainer = styled.section`
 			background-color: darkgrey;
 			outline: 1px solid slategrey;
 		}
+		&::-webkit-scrollbar:horizontal {
+			height: 8px;
+			background-color: #1b1b1b;
+		}
+		&::-webkit-scrollbar-thumb:horizontal {
+			background: gray;
+			border-radius: 10px;
+		}
 	}
 `;
 const Experience = () => {
@@ -85,7 +93,7 @@ const Experience = () => {
 			position: "HEAD OF COMMUNICATIONS",
 			company: "Quantcast",
 			duration: "FEB 2016 - FEB 2018",
-			color: "#000000",
+			color: "#1b1b1b",
 			logo: Quantcast,
 		},
 		{

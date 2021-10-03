@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import Profile from "../../assets/img/brandon.jpg";
 
@@ -53,7 +54,7 @@ const HeroSection = styled.div`
 	}
 `;
 const Hero = () => {
-	// 	const { scrollYProgress } = useViewportScroll()
+	// const { scrollYProgress } = useViewportScroll();
 	// const scale = useTransform(scrollYProgress, [0, 1], [0.2, 2]);
 
 	// return (
@@ -74,7 +75,18 @@ const Hero = () => {
 				<p>I am</p>
 				<h1 className="name">BRANDON BORRMAN</h1>
 			</div>
-			<img src={Profile} alt="profile" />
+			<motion.img
+				initial={{ scale: 0, rotate: -45 }}
+				animate={{ rotate: 0, scale: 1 }}
+				whileHover={{ scale: 1.2, rotate: 3 }}
+				whileTap={{
+					scale: 0.8,
+					rotate: -5,
+					borderRadius: "100%",
+				}}
+				src={Profile}
+				alt="profile"
+			/>
 		</HeroSection>
 	);
 };

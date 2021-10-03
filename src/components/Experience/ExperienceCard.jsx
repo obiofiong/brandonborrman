@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import { Building } from "@styled-icons/bootstrap/Building";
 // import Twitter from "../../assets/img/twitter.jpg";
@@ -65,17 +66,19 @@ const BuildingIcon = styled(Building)`
 `;
 const ExperienceCard = ({ experience }) => {
 	return (
-		<Card bg={experience.color}>
-			<h4>{experience.position}</h4>
-			<div className="company">
-				{experience.logo ? (
-					<img src={experience.logo} alt="twitter" />
-				) : null}
-				<p>{experience.company}</p>
-			</div>
-			<p>{experience.duration}</p>
-			<BuildingIcon size={150} color="gray" />
-		</Card>
+		<motion.div>
+			<Card bg={experience.color}>
+				<h4>{experience.position}</h4>
+				<div className="company">
+					{experience.logo ? (
+						<img src={experience.logo} alt="twitter" />
+					) : null}
+					<p>{experience.company}</p>
+				</div>
+				<p>{experience.duration}</p>
+				<BuildingIcon size={150} color="gray" />
+			</Card>
+		</motion.div>
 	);
 };
 
